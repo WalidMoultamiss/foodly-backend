@@ -3,15 +3,10 @@ import {IStatus} from '@ts/enums';
 
 export const typeDefs = gql`
     input ProductInput {
-        name: String
-        description: String
-        image: [String]
-        price: String
-        storeId: ID
-        categoryIds: [ID]
-        stock: String
-        promoPrice: String
-        quantity: String
+        name: String!
+        description: String!
+        image: [String]!
+        price: String!
     }
 
     input pagination {
@@ -30,15 +25,8 @@ export const typeDefs = gql`
         description: String!
         image: [String]!
         price: String!
-        promoPrice: String!
-        storeId: Store!
-        categoryIds: [Category]!
-        stock: String!
         status: String!
         createdAt: String!
-        uuid: String!
-        viewed: Int!
-        quantity: String!
     }
 
     type Query {
