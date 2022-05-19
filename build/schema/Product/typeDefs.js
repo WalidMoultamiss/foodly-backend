@@ -4,15 +4,10 @@ exports.typeDefs = void 0;
 const apollo_server_express_1 = require("apollo-server-express");
 exports.typeDefs = (0, apollo_server_express_1.gql) `
     input ProductInput {
-        name: String
-        description: String
-        image: [String]
-        price: String
-        storeId: ID
-        categoryIds: [ID]
-        stock: String
-        promoPrice: String
-        quantity: String
+        name: String!
+        description: String!
+        image: [String]!
+        price: String!
     }
 
     input pagination {
@@ -21,7 +16,6 @@ exports.typeDefs = (0, apollo_server_express_1.gql) `
     }
 
     input ProductStoreInput {
-        storeId: ID
         productIds: [ID]
     }
 
@@ -31,15 +25,8 @@ exports.typeDefs = (0, apollo_server_express_1.gql) `
         description: String!
         image: [String]!
         price: String!
-        promoPrice: String!
-        storeId: Store!
-        categoryIds: [Category]!
-        stock: String!
         status: String!
         createdAt: String!
-        uuid: String!
-        viewed: Int!
-        quantity: String!
     }
 
     type Query {
@@ -50,7 +37,6 @@ exports.typeDefs = (0, apollo_server_express_1.gql) `
     }
 
     type Mutation {
-        addProductToStore(input: ProductStoreInput): Store
         createProduct(input: ProductInput): Product
         updateProduct(id: ID!, input: ProductInput): Product
         deleteProduct(id: ID!): Product

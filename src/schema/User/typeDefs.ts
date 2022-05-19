@@ -29,7 +29,6 @@ export const typeDefs = gql`
     role: Role!
     password: String!
     token: String!
-    store: Store!
     createdAt: String!
   }
 

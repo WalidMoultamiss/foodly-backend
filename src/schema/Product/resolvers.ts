@@ -1,6 +1,6 @@
 import { pubsub } from "@config/pubsub";
 import type { Resolvers } from "@generated/types";
-import { Product, IProduct, Store, Category } from "@models/index";
+import { Product, IProduct, Category } from "@models/index";
 import {io} from '../../config/apollo'
 
 export const resolvers: Resolvers = {
@@ -29,17 +29,6 @@ export const resolvers: Resolvers = {
       const product = new Product(input);
 
       let chiData = await product.save();
-      return chiData;
-    },
-    // @ts-ignore
-    addProductToStore: async (_: any, { input }: { input: any }) => {
-      const { storeId, productIds } = input;
-      const store = await Store.findById(storeId);
-      if (!store) {
-        throw new Error("Store not found");
-      }
-      store.productIds.push(...productIds);
-      let chiData = await store.save();
       return chiData;
     },
   },

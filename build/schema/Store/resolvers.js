@@ -8,6 +8,7 @@ exports.resolvers = {
             return index_1.Store.find();
         },
         getStoreById: (_, { id }) => index_1.Store.findById(id),
+        //@ts-ignore
     },
     Mutation: {
         //@ts-ignore

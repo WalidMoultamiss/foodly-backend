@@ -30,7 +30,6 @@ exports.typeDefs = (0, apollo_server_express_1.gql) `
     role: Role!
     password: String!
     token: String!
-    store: Store!
     createdAt: String!
   }
 

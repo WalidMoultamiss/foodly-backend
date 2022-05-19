@@ -77,10 +77,10 @@ const bootstrap = async (schema) => {
         },
     });
     await server.start();
-    server.applyMiddleware({ app, path: '/gql', cors: { origin: 'http://localhost:3002/*' } });
+    server.applyMiddleware({ app, path: '/gql', cors: { origin: "*" } });
     // Now that our HTTP server is fully set up, we can listen to it.
     httpServer.listen(port, async () => {
-        console.log(`🚀 Server ready at: ${port}${server.graphqlPath}`);
+        console.log(`🚀 Server ready at ${port}${server.graphqlPath}`);
         const { connection } = await (0, db_1.db)();
         // connect to database
         console.log(`👋 Connected to database successfully: ${connection.name}`);

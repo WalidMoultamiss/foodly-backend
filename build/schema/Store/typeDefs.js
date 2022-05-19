@@ -13,6 +13,10 @@ exports.typeDefs = (0, apollo_server_express_1.gql) `
         productIds: [ID]
     }
 
+    type Images {
+        image: String
+    }
+
     type Store {
         id: ID!
         name: String!

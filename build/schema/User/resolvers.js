@@ -39,18 +39,9 @@ exports.resolvers = {
             if (!isValid) {
                 throw new Error("Invalid password");
             }
-            //get store
-            const store = await index_1.Store.findOne({ userId: user.id });
-            if (!store) {
-                user.store = "not found";
-            }
-            else {
-                user.store = store;
-            }
             const token = (0, jsonwebtoken_1.sign)({ userId: user.id, role: user.role }, "secret", {
                 expiresIn: process.env.JWT_EXPIRES_IN,
             });
-            //send socket
             user.token = token;
             return user;
         },

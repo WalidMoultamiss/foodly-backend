@@ -15,7 +15,6 @@ export const typeDefs = gql`
     }
 
     input ProductStoreInput {
-        storeId: ID
         productIds: [ID]
     }
 
@@ -37,7 +36,6 @@ export const typeDefs = gql`
     }
 
     type Mutation {
-        addProductToStore(input: ProductStoreInput): Store
         createProduct(input: ProductInput): Product
         updateProduct(id: ID!, input: ProductInput): Product
         deleteProduct(id: ID!): Product
