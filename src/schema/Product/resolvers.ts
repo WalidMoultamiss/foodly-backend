@@ -1,7 +1,5 @@
-import { pubsub } from "@config/pubsub";
 import type { Resolvers } from "@generated/types";
 import { Product, IProduct, Category } from "@models/index";
-import {io} from '../../config/apollo'
 
 export const resolvers: Resolvers = {
   Query: {
