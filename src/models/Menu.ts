@@ -2,13 +2,15 @@ import { Schema, model } from "mongoose";
 
 
 export interface IMenu {
-  product: string[];
+  name: string;
+  productIds: string[];
 }
 
 
 
 const MenuSchema = new Schema<IMenu>({
-  product: { type: [String]  },
+  name: {type: String, required: true},
+  productIds: { type: [String]},
 });
 
 export const Menu = model<IMenu>("Menu", MenuSchema);

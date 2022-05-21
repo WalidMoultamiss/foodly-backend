@@ -3,8 +3,8 @@ module.exports = {
     {
       name: 'app',
       script: 'build/main.js',
-      instances: 'max',
-      max_restarts: 5,
+      instances: 2,
+      max_restarts: 2,
       env: {
         NODE_ENV: 'development',
       },
