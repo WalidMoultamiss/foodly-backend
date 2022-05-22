@@ -3,6 +3,7 @@ import { IOrder, Category, Product, Order , User
 } from "@models/index";
 
 export const resolvers: Resolvers = {
+
   Query: {
     //@ts-ignore
     getAllOrders:(): any => {
@@ -19,6 +20,7 @@ export const resolvers: Resolvers = {
         ...input,
       });
       let chiData = await order.save();
+      //all clear
       return chiData;
     },
   },
